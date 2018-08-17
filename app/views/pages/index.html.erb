@@ -1,2 +1,6 @@
-<h1>Pages#index</h1>
-<p>Find me in app/views/pages/index.html.erb</p>
+<%= form_tag controller: 'pages', action: 'create', method: :post do %>
+  <%= label_tag(:push_text, "Push text") %>
+  <%= text_field_tag(:push_text) %>
+  <%= select_tag(:device_type, options_for_select([ "ios", "android" ], "Device type")) %>
+  <%= submit_tag("Push") %>
+<% end %>
